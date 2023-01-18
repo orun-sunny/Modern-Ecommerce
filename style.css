@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@200;300;400;500;600&display=swap');
+/*navbar work end*/
+*{
+    font-family: 'Archivo', sans-serif;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next{
+    color: gray!important;
+
+    height: 1px!important;
+
+}
+.swiper-button-prev{
+    color: gray!important;
+    height: 2rem!important;
+}
+
+
+.mobile-menu {
+    right: -200%;
+    transition: 0.5s;
+}
+
+.mobile-menu.active {
+    right: 0;
+}
+
+.mobile-menu ul li ul {
+    display: none;
+}
+
+.mobile-menu ul li:hover ul {
+    display: block;
+}
+

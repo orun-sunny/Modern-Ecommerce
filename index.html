@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tailwind css</title>
+    <link rel="stylesheet" href="./style.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.css" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital@0;1&family=Montserrat:wght@300;400;500;600;700;800;900&family=Rubik+Moonrocks&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@200;300;400;500;600&display=swap');
+    </style>
+
+    <style>
+        #menu-toggle:checked+#menu {
+            display: block;
+        }
+    </style>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'sm': '4px',
+                    // => @media (min-width: 640px) { ... }
+
+                    'md': '768px',
+                    // => @media (min-width: 768px) { ... }
+
+                    'lg': '1024px',
+                    // => @media (min-width: 1024px) { ... }
+
+                    'xl': '1280px',
+                    // => @media (min-width: 1280px) { ... }
+
+                    '2xl': '1536px',
+                    // => @media (min-width: 1536px) { ... }
+                }
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+        <div class="flex-1 flex justify-between items-center">
+            <a href="#">
+                <svg width="32" height="36" viewBox="0 0 32 36" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M15.922 35.798c-.946 0-1.852-.228-2.549-.638l-10.825-6.379c-1.428-.843-2.549-2.82-2.549-4.501v-12.762c0-1.681 1.12-3.663 2.549-4.501l10.825-6.379c.696-.41 1.602-.638 2.549-.638.946 0 1.852.228 2.549.638l10.825 6.379c1.428.843 2.549 2.82 2.549 4.501v12.762c0 1.681-1.12 3.663-2.549 4.501l-10.825 6.379c-.696.41-1.602.638-2.549.638zm0-33.474c-.545 0-1.058.118-1.406.323l-10.825 6.383c-.737.433-1.406 1.617-1.406 2.488v12.762c0 .866.67 2.05 1.406 2.488l10.825 6.379c.348.205.862.323 1.406.323.545 0 1.058-.118 1.406-.323l10.825-6.383c.737-.433 1.406-1.617 1.406-2.488v-12.757c0-.866-.67-2.05-1.406-2.488l-10.825-6.379c-.348-.21-.862-.328-1.406-.328zM26.024 13.104l-7.205 13.258-3.053-5.777-3.071 5.777-7.187-13.258h4.343l2.803 5.189 3.107-5.832 3.089 5.832 2.821-5.189h4.352z">
+                    </path>
+                </svg>
+            </a>
+        </div>
+
+        <label for="menu-toggle" class="pointer-cursor lg:hidden block"><svg class="fill-current text-gray-900"
+                xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                <title>menu</title>
+                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg></label>
+        <input class="hidden" type="checkbox" id="menu-toggle" />
+
+        <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+            <nav>
+                <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
+                    <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                            href="#">Features</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                            href="#">Pricing</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400"
+                            href="#">Documentation</a></li>
+                    <li><a class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400 lg:mb-0 mb-2"
+                            href="#">Support</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="lg:ml-4 flex items-center justify-start lg:mb-0 mb-4 pointer-cursor">
+                <img class="rounded-full w-10 h-10 border-2 border-transparent hover:border-indigo-400"
+                    src="https://pbs.twimg.com/profile_images/1128143121475342337/e8tkhRaz_normal.jpg"
+                    alt="Andy Leverenz">
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- <nav class="px-2 bg-white border-gray-200 dark:bg-gray-900 dark:border-gray-700">
+    <div class="container flex flex-wrap items-center justify-between mx-auto">
+        <a href="#" class="flex items-center">
+            <img src="./assets/orun/reiro.svg" class=" h-6 mr-3 sm:w-full" alt="" />
+
+        </a>
+        <button data-collapse-toggle="navbar-multi-level" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-multi-level" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-multi-level">
+            <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-white bg-gray-300 rounded md:bg-transparent md:text-gray-700 md:p-0 md:dark:text-white dark:bg-gray-300 md:dark:bg-transparent" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-gray-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Dropdown <svg class="w-4 h-4 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg></button>
+               
+                    <div id="dropdownNavbar" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        <ul class="py-1 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+                            </li>
+                            <li aria-labelledby="dropdownNavbarLink">
+                                <button id="doubleDropdownButton" data-dropdown-toggle="doubleDropdown" data-dropdown-placement="right-start" type="button" class="flex items-center justify-between w-full px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dropdown<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg></button>
+                                <div id="doubleDropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded shadow w-44 dark:bg-gray-700">
+                                    <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="doubleDropdownButton">
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Overview</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">My downloads</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Billing</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Rewards</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+                            </li>
+                        </ul>
+                        <div class="py-1">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-400 dark:hover:text-white">Sign out</a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
+                </li>
+                <li>
+                    <a href="#" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav> -->
+
+
+
+
+
+
+    <!--swipper start-->
+
+
+
+
+
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+
+                <div class="relative w-full">
+
+                    <div>
+                        <img class="sm:w-full w-full transition duration-500 hover:scale-125 "
+                            src="./assets/orun/header1.webp">
+                    </div>
+
+
+                    <p class="absolute tracking-wider  bottom-24 left-36 text-white text-center font-bold md:text-xl ">
+                        Discover Better
+                        basic and modern ,
+                        </br>
+                        made of steel for your back.</p>
+
+
+                </div>
+
+
+
+            </div>
+            <div class="swiper-slide">
+
+
+                <div class="relative w-full">
+                    <div class="">
+                        <img class=" transition duration-500 hover:scale-125 w-full object-cover "
+                            src="./assets/orun/header2.webp">
+                    </div>
+                    <div class=" absolute  bottom-24 left-36 text-white text-center ">
+                        <div class="px-8">
+
+
+                            <div>
+                                <p class=" font-archivo, font-bold md:text-xl ">Discover Better basic and modern ,
+                                    </br>
+                                    made of steel for your back.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+
+                <div class="relative w-full">
+                    <div class="">
+                        <img class=" transition duration-500 hover:scale-125 w-full object-cover "
+                            src="./assets/orun/header3.webp">
+                    </div>
+                    <div class=" absolute  bottom-24 left-36 text-white text-center ">
+                        <div class="px-8">
+
+
+                            <div>
+                                <p class=" font-archivo, font-bold md:text-xl ">Discover Better basic and modern ,
+                                    </br>
+                                    made of steel for your back.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="relative w-full">
+                    <div class="">
+                        <img class=" transition duration-500 hover:scale-125 w-full object-cover "
+                            src="./assets/orun/header4.webp">
+                    </div>
+                    <div class=" absolute  bottom-24 left-36 text-white text-center ">
+                        <div class="px-8">
+
+
+                            <div>
+                                <p class=" font-archivo, font-bold md:text-xl ">Discover Better basic and modern ,
+                                    </br>
+                                    made of steel for your back.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="relative w-full">
+                    <div class="">
+                        <img class=" transition duration-500 hover:scale-125 w-full object-cover "
+                            src="./assets/orun/header4.webp">
+                    </div>
+                    <div class=" absolute  bottom-24 left-36 text-white text-center ">
+                        <div class="px-8">
+
+
+                            <div>
+                                <p class=" font-archivo, font-bold md:text-xl ">Discover Better basic and modern ,
+                                    </br>
+                                    made of steel for your back.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+
+                <div class="relative w-full">
+                    <div class="">
+                        <img class=" transition duration-500 hover:scale-125 w-full object-cover "
+                            src="./assets/orun/header4.webp">
+                    </div>
+                    <div class=" absolute  bottom-24 left-36 text-white text-center ">
+                        <div class="px-8">
+
+
+                            <div>
+                                <p class=" font-archivo, font-bold md:text-xl ">Discover Better basic and modern ,
+                                    </br>
+                                    made of steel for your back.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class=" swiper-button-prev"></div>
+        <div class=" swiper-button-next"></div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section class=" pt-5">
+        <div class=" align-middle  container mx-auto  ">
+            <div
+                class="grid grid-cols-4 sm:grid-cols-1 sm:col-span-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left pb-6">
+
+                <!--        <div class="col-span-1 bg-gray-400">left</div>-->
+                <div class="col-span-1 md:shrink-0 md:grid-cols-2 sm:col-span-12 lg:col-span-1">
+                    <div class="font-bold group ">
+                        <img class="lg:w-full  md:w-full ease-in-out duration-300 group-hover:rotate-1 group-hover:scale-120   h-full"
+                            src="./assets/orun/day-dress_350x.webp" alt="">
+                    </div>
+                    <div class="text-center ease-in duration-300 pt-2">
+                        <h1>Day Dresses</h1>
+                        <p>something on the sun</p>
+                        <button
+                            class=" transition duration-150 ease-out hover:bg-red-700 mt-6 px-4 py-1  bg-red-500 text-white font-bold">
+                            Shop Now
+                        </button>
+                    </div>
+                </div>
+                <div class=" col-span-12 lg:col-span-2 md:grid-cols-2 sm:col-span-12 sm:row-span-2 pb-6">
+                    <div class="font-bold">
+                        <img class="w-full lg:w-full md:w-full h-full transition-all duration-500 bg-gradient-to-br to-red via-black from-red-500 bg-size-200 hover:bg-right-bottom "
+                            src="./assets/orun/group.webp" alt="">
+
+                    </div>
+                    <div class="text-center pt-2">
+                        <h1>Day Dresses</h1>
+                        <p>something on the sun</p>
+                        <button
+                            class="  mt-6 px-4 py-1 rounded-md hover:bg-red-700  bg-red-500 text-white font-bold">Shop
+                            Now
+                        </button>
+                    </div>
+                </div>
+                <div class=" col-span-12 sm:col-span-12 md:grid-cols-2  lg:col-span-1">
+                    <div class="font-bold group">
+                        <img class=" lg:w-full md:w-full h-full ease-in-out duration-300 group-hover:rotate-1 group-hover:scale-120 "
+                            src="./assets/orun/shoes2_350x.webp" alt="">
+                    </div>
+                    <div class="text-center pt-2">
+                        <h1>Day Dresses</h1>
+                        <p>something on the sun</p>
+                        <button class="mt-6 px-4 py-1 rounded-md bg-red-500 hover:bg-red-700  text-white font-bold">Shop
+                            Now
+                        </button>
+                    </div>
+                </div>
+                <!--        <div class="col-span-1 bg-gray-400">right</div>-->
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container pt-18 mx-auto ">
+        <div class="relative">
+            <div class="h-[600x]">
+                <img class="w-full" src="./assets/orun/hero.webp" alt="">
+            </div>
+
+            <div class="absolute sm:left-24 bottom-16 left-48 text-center ">
+                <!--                <h3 class="text-orange-400 font-bold mb-4">3. Horizontal &amp; Responsive Card</h3>-->
+                <div class="bg-white rounded-lg shadow-2xl px-16 py-8">
+                    <span class=" text-center">Markdowns up to 65% off</span>
+
+                    <div class="p-6">
+                        <h2 class=" font-bold md:text-xl ">Discover Better basic and modern ,
+                            </br>
+                            made of steel for your back.</h2>
+                        <button
+                            class="hover:bg-red-700 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-red-500 duration-300 mt-6 px-6 py-3 rounded-md bg-red-500 text-white font-bold">
+                            Shop Now
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section class="mt-8 bg-gray-100 p-6 ">
+        <div
+            class=" container mx-auto grid lg:justify-items-center grid-cols-3 sm:grid-cols-1 lg:grid-cols-3 sm:justify-items-start  gap-4">
+
+            <div class=" sm:flex items-center lg:grid lg:pl-8">
+                <div class="px-16">
+                    <img class="p-2" src="./assets/orun/again3.png" alt="">
+                </div>
+                <div class="text-center pt-2">
+                    <h1 class="text-center hover:text-center">FREE SHIPPING WORLD WIDE</h1>
+
+                </div>
+
+            </div>
+            <div class=" sm:flex items-center lg:grid">
+                <div class="px-16">
+                    <img class="p-2" src="./assets/orun/again2.png" alt="">
+                </div>
+                <div class="text-center pt-2">
+                    <h1 class="text-center hover:text-center">FREE SHIPPING WORLD WIDE</h1>
+
+                </div>
+            </div>
+            <div class=" sm:flex items-center lg:grid">
+                <div class="px-16">
+
+                    <img class="p-2" src="./assets/orun/again1.png" alt="">
+                </div>
+                <div class="text-center pt-2">
+                    <h1 class="text-center hover:text-center">FREE SHIPPING WORLD WIDE</h1>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!--product section-->
+
+    <section class="container mx-auto pt-6 ">
+
+        <div id="father" class="grid grid-cols-4 sm:grid-cols-1 lg:grid-cols-4 gap-36  pt-6">
+
+            <div class="justify-items-center">
+                <h1 class="p-4">New arrivals</h1>
+
+                <div class="flex items-center">
+                    <div class=" group hover:bg-slate-200 hover:bg-slate-200">
+                        <img class="group-hover:stroke-white group hover:bg-slate-200" src="./assets/orun/p6.webp"
+                            alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold ">
+                        <h1>Moon Light Bay</h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro1.avif" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro3.webp" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro3.webp" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!--            1st grid-->
+
+
+            <div class="justify-items-center">
+                <h1 class="p-4">New trends</h1>
+
+                <div class="flex items-center">
+                    <div class=" group hover:bg-slate-200 hover:bg-slate-200">
+                        <img class="group-hover:stroke-white group hover:bg-slate-200" src="./assets/orun/pro3.webp"
+                            alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold ">
+                        <h1>Moon Light Bay</h1>
+                        <p class="line-through text-start">$550.00</p>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro3.webp" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro1.avif" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/p4.avif" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--            2nd grid-->
+            <div class="justify-items-center">
+                <h1 class="p-4">New Picks</h1>
+
+                <div class="flex items-center">
+                    <div class=" group hover:bg-slate-200 hover:bg-slate-200">
+                        <img class="group-hover:stroke-white group hover:bg-slate-200" src="./assets/orun/p6.webp"
+                            alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold ">
+                        <h1>Moon Light Bay</h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro1.avif" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro3.webp" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro3.webp" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--            3rd grid-->
+
+            <div class="justify-items-center">
+                <h1 class="p-4">Popular Brands</h1>
+
+                <div class="flex items-center">
+                    <div class=" group hover:bg-slate-200 hover:bg-slate-200">
+                        <img class="group-hover:stroke-white group hover:bg-slate-200" src="./assets/orun/p6.webp"
+                            alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold ">
+                        <h1>Moon Light Bay</h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro1.avif" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro3.webp" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="pt-4 flex items-center">
+                    <div>
+                        <img class="w-full" src="./assets/orun/pro3.webp" alt="">
+
+                    </div>
+                    <div class="whitespace-nowrap justify-center pl-2 font-bold">
+                        <h1>Moon Light Bay </h1>
+                        <p class="text-start">$250.00</p>
+                        <div class="flex">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-christmas-star-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+                            <img src="./assets/orun/icons8-star-half-empty-16.png" alt="">
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!--            4th grid-->
+        </div>
+
+    </section>
+
+
+    <!--    most popular picks section-->
+    <!--<div class=" col-span-1 sm:col-span-1 grid-col-12 sm:col-span-1    ">-->
+
+
+    <section class="container mx-auto pt-12">
+        <div>
+            <h1 class=" font-semi text-2xl bold text-center text-bold">Must Have Picks</h1>
+            <p class="text-center text-lg text-bold">Shop our Editor Pick for outfit inspiration and must have looks</p>
+        </div>
+        <div>
+
+
+            <section class=" pt-5">
+                <div class=" align-middle  container mx-auto  ">
+                    <div
+                        class="grid grid-cols-4 sm:grid-cols-1 sm:col-span-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-left pb-6">
+
+                        <!--        <div class="col-span-1 bg-gray-400">left</div>-->
+
+                        <div
+                            class="group relative cursor-pointer items-center justify-center overflow-hidden  hover:shadow-xl hover:shadow-black/30 col-span-1 sm:col-span-1 grid-col-12 sm:col-span-1 ">
+                            <div class="h-96 w-72">
+                                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-125"
+                                    src="./assets/orun/p7.webp" alt="" />
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                                <h1 class="font-archivo text-3xl font-bold text-white">Beauty</h1>
+
+                                <button
+                                    class="rounded-full bg-neutral-900  px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Add
+                                    To Cart</button>
+                            </div>
+                        </div>
+
+
+                        <div
+                            class="group relative cursor-pointer items-center justify-center overflow-hidden  hover:shadow-xl hover:shadow-black/30 col-span-1 sm:col-span-1 grid-col-12 sm:col-span-1 ">
+                            <div class="h-96 w-72">
+                                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-125"
+                                    src="./assets/orun/paa.webp" alt="" />
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                            </div>
+                            <div
+                                class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                                <h1 class="font-archivo text-3xl font-bold text-white">Beauty</h1>
+
+                                <button
+                                    class="rounded-full bg-neutral-900  px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Add
+                                    To Cart</button>
+                            </div>
+                        </div>
+
+
+                        <div class=" col-span-2 sm:col-span-2 grid-col-12 sm:col-span-2  ">
+                            <div class="font-bold">
+                                <img class="w-full" src="./assets/orun/genji.webp" alt="">
+                            </div>
+
+                        </div>
+                        <!--        <div class="col-span-1 bg-gray-400">right</div>-->
+
+
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+
+    </section>
+
+
+    <footer class="bg-black-900 bg-black p-20">
+        <div class="container mx-auto ">
+            <div class="grid md:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 grid-cols-4 ">
+
+                <div class="text-white">
+                    <h1 class="text-bold text-xl text-start">HELP</h1>
+                    <div class="pt-2 text-start ">
+                        <p>Help & FAQs</p>
+                        <p>Return Policy</p>
+                        <p>Terms & Conditions</p>
+                        <p>Privacy Policy</p>
+                        <p>Support Center</p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="text-white">
+                    <h1 class="text-semi-bold text-xl  text-start">Trending</h1>
+                    <div class="pt-2 text-start ">
+                        <p>Help & FAQs</p>
+                        <p>Return Policy</p>
+                        <p>Terms & Conditions</p>
+                        <p>Privacy Policy</p>
+                        <p>Support Center</p>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="text-white  ">
+                    <div>
+                        <div class="grid grid-cols-4 sm:grid-cols-2 lg:grid-cols-1">
+                            <h1 class="text-bold text-xl pt-2 text-start ">News Letter Subscribe</h1>
+                        </div>
+                        <div>
+                            <p class="">Follow The Lates Trends Sales & <br>
+                                Style</p>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class='flex gap-2 xsm:flex-row md:p-0  px-4'>
+                            <input
+                                class=' w-48 text-lg transition-all duration-300 rounded-lg focus:outline-none focus:right-1 '
+                                placeholder='Enter your email' type="text" />
+                            <button class=' border-solid border-2 border-white px-4 font-semibold bg-black rounded-lg'>
+                                Subscribe
+                            </button>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="text-white mt-2">
+                    <h1 class="text-bold text-xl text-start">Avon On instagram</h1>
+                    <div class=" pt-2 grid grid-cols-6 gap-2 sm:grid-cols-6 lg:grid-cols-6">
+                        <div>
+                            <div>
+                                <img src="./assets/orun/f1.jpeg" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <img src="./assets/orun/f2.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/orun/f1.jpeg" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <img src="./assets/orun/f3.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/orun/f4.jpeg" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <img src="./assets/orun/f2.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/orun/f4.jpeg" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <img src="./assets/orun/f3.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/orun/f2.jpeg" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <img src="./assets/orun/f1.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+                        <div>
+                            <div>
+                                <img src="./assets/orun/f3.jpeg" alt="">
+                            </div>
+                            <div class="pt-2">
+                                <img src="./assets/orun/f1.jpeg" alt="">
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <div>
+
+                </div>
+
+
+            </div>
+            <div class="pt-4 mb-2">
+                <hr class="border-dotted">
+            </div>
+            <section class="pt-16 mb=5">
+                <div class="grid grid-cols-2 sm:grid-cols-1 lg:grid-cols-2 xs-grid-col-1 gap-2">
+                    <div class="text-white">
+                        <p class="pt-2 text-start ">@2022 Avone .All Rights Reserved.Ecommerce Software by Shopify <br>
+                            design by avon
+
+                        </p>
+
+                    </div>
+                    <div class="mb=5">
+                        <div class="flex lg:justify-end sm:justify-start">
+                            <img src="./assets/orun/icons8-visa-48.png" alt="">
+                            <img src="./assets/orun/icons8-visa-48.png" alt="">
+
+                            <img src="./assets/orun/icons8-visa-48.png" alt="">
+                            <img src="./assets/orun/icons8-google-pay-48.png" alt="">
+                            <img src="./assets/orun/icons8-apple-pay-48.png" alt="">
+                            <img src="./assets/orun/icons8-mastercard-logo-48.png" alt="">
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+            </section>
+        </div>
+
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+
+    <script src="./main.js"></script>
+
+    <script>
+
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                // el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
